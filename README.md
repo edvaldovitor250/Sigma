@@ -7,12 +7,19 @@ Venho compartilhar um projeto em JPA e Spring Boot com vocês. A ideia principal
 Utilizei o Lombok, e as principais anotações utilizadas foram:
 
 @Entity
+
 @Data
+
 @AllArgsConstructor
+
 @Table
+
 @NamedQueries
+
 @Id
+
 @GeneratedValue(strategy = GenerationType.IDENTITY)
+
 @Column
 
 Em seguida, utilizei uma classe chamada MateriaRepositoryImpl que implementa a interface MateriaRepository. Essa classe herda todos os métodos da interface. 
@@ -33,18 +40,27 @@ SpringApplicationBuilder(SigmaApplication.class)
 Principais funcionalidades do CRUD no projeto:
 
 Alteração de Matéria
+
 Buscar Matéria
+
 Consultar Matéria
+
 Exclusão de Matéria
+
 Inclusão de Matéria
 
 Principais tecnologias utilizadas e suas versões:
 
 MySQL: 8.0.21
+
 Spring Boot: 3.1.1
+
 IntelliJ IDEA: 2023.1
+
 Java: 17
+
 Hibernate: 5.0
+
 Lombok: 1.18.28
 
 A principal ideia era praticar e utilizar o JPA. Espero que tenham gostado do meu projeto. Se tiverem alguma dúvida, fiquem à vontade para falar comigo.
