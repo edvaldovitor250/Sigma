@@ -2,28 +2,8 @@
 
 Olá, devs! Como vocês estão?
 
-Estrutura do projeto:
+Venho compartilhar um projeto em JPA e Spring Boot com vocês. A ideia principal do projeto é adicionar, pesquisar, remover e consultar informações relacionadas a disciplinas, usando o JPA no dia a dia. Isso é conhecido como CRUD (Create, Read, Update e Delete em inglês). Tudo isso é feito utilizando JPA e Spring Boot, com foco em uma escola chamada Sigma. No sistema, você pode manipular as disciplinas, como mostrado no vídeo.
 
-Domain 
-
-Model:
-Matéria
-Professor
-
-Repository:
-MateriaRepositoryImpl
-
-Infrastructure:
-MateriaRepository
-
-JPA:
-Alteração de Matéria
-Buscar Matéria
-Consultar Matéria
-Exclusão de Matéria
-Inclusão de Matéria
-
-Essas pastas foram utilizadas para organizar o projeto e foram implementadas para fornecer a melhor visualização do sistema.
 Utilizei o Lombok, e as principais anotações utilizadas foram:
 
 @Entity
