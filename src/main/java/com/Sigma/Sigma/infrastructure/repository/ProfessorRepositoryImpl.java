@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+// para coletar os dados
+
 @Component
 public class ProfessorRepositoryImpl implements ProfessorRepository {
 
