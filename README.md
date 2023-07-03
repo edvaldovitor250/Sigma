@@ -1,4 +1,4 @@
-# Sigma-Utilizando-JPA
+# Sigma
 
 Olá, devs! Como vocês estão?
 
