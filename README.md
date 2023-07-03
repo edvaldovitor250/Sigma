@@ -65,3 +65,25 @@ Lombok: 1.18.28
 
 A principal ideia era praticar e utilizar o JPA. Espero que tenham gostado do meu projeto. Se tiverem alguma dúvida, fiquem à vontade para falar comigo.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Gostaria de compartilhar com vocês a atualização do Projeto Sigma, que agora possui uma REST API baseada no modelo RMM no nível 2 de REST. Foi criada uma classe Controller para manipular os métodos HTTP, utilizando o Postman como base para testes e visualização dos resultados em formato JSON. Além disso, foram ajustados os códigos de status retornados nas respostas, fornecendo informações adequadas sobre o resultado das requisições.
+
+Essa melhoria foi construída em um período de uma semana de estudo dedicado a REST API, onde me esforcei para aprender e aplicar os conceitos. Durante esse processo, adquiri conhecimentos sobre os níveis do RMM, os quais utilizei no projeto.
+
+Agora, é possível utilizar os seguintes métodos HTTP para as entidades "materia" e "professor":
+
+GET: para listar recursos e buscar por ID.
+
+POST: adicionar novos recursos no projeto.
+
+PATCH: atualizar parcialmente um objeto existente.
+
+PUT: atualizar completamente o corpo de um objeto existente.
+
+DELETE: remover um objeto desejado.
+
+
+Essas melhorias proporcionam uma maior flexibilidade e controle na manipulação dos recursos do projeto, mantendo a integração com o JPA e utilizando as informações do usuário armazenadas no banco de dados.
+
+
