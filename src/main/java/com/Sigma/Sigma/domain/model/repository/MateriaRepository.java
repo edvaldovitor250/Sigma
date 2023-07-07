@@ -1,20 +1,16 @@
 package com.Sigma.Sigma.domain.model.repository;
 
 import com.Sigma.Sigma.domain.model.Materia;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
 // interface com todos os metodos da classe  MateriaRepositoryImpl
-public interface MateriaRepository {
+public interface MateriaRepository extends JpaRepository<Materia,Long> {
 
-    List<Materia> todos();
+    List<Materia> findByNomeContaining(String nome);
 
-    Materia PorId(Long id);
-
-    Materia salvar(Materia materia);
-
-    void remover(Long materia);
-
+    boolean existsByNome(String nome);
 
 
 }
