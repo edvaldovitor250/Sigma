@@ -94,7 +94,6 @@ public class MateriaController {
         return atualizar(materiaId, materiaAtual);
     }
 
-
     private void merge(Map<String, Object> camposOrigem, Materia materiaDestino) {
         ObjectMapper objectMapper = new ObjectMapper();
         Materia materiaOrigem = objectMapper.convertValue(camposOrigem, Materia.class);
