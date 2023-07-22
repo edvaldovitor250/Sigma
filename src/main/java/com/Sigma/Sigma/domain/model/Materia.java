@@ -4,24 +4,33 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
-@NamedQuery(name = "Materia.findAll", query = "SELECT m FROM Materia m")
+@Table(name = "materia")
+@NamedQueries({@NamedQuery(name = "Materia.findAll", query = "SELECT m FROM Materia m")})
 public class Materia {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Long id;
 
-    @Column(name = "nome_materia")
-    public String nome;
+    @Column(nullable = false, name = "nome_materia")
+    private String nome;
 
-    @Column(name = "numeros_horas")
-    public int Horas;
+    @Column(nullable = false, name = "numeros_horas")
+    private int horas;
 
-    public Materia() {
+    @ManyToMany(mappedBy = "materias")
+    private List<Professor> professores = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "materias")
+    private List<Aluno> alunos = new ArrayList<>();
+
+    public Materia(){
 
     }
 }
