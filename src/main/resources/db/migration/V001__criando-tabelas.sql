@@ -1,6 +1,6 @@
 create table aluno(
 id bigint not null auto_increment,
-nome_aluno varchar(80) not null,
+nome varchar(80) not null,
 
 primary key (id)
 
@@ -11,8 +11,8 @@ primary key (id)
 create table materia(
 
 id bigint not null auto_increment,
-nome_materia varchar(80) not null,
-numeros_horas INT NOT NULL,
+nome varchar(80) not null,
+horas INT NOT NULL,
 
 
 primary key (id)
@@ -24,7 +24,7 @@ primary key (id)
 create table professor(
 
 id bigint not null auto_increment,
-nome_professor varchar(80) not null,
+nome varchar(80) not null,
 
 primary key (id)
 

@@ -19,18 +19,8 @@ public class Professor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, name = "nome_professor")
+    @Column(nullable = false)
     private String nome;
-
-    @ManyToMany
-    @JoinTable(name = "professor_materia",
-            joinColumns = @JoinColumn(name = "professor_id"),
-            inverseJoinColumns = @JoinColumn(name = "materia_id"))
-    private List<Materia> materias = new ArrayList<>();
-
-
-    @ManyToMany(mappedBy = "professores")
-    private List<Aluno> alunos = new ArrayList<>();
 
     public Professor() {
 

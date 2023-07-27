@@ -18,17 +18,11 @@ public class Materia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, name = "nome_materia")
+    @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, name = "numeros_horas")
+    @Column(nullable = false)
     private int horas;
-
-    @ManyToMany(mappedBy = "materias")
-    private List<Professor> professores = new ArrayList<>();
-
-    @ManyToMany(mappedBy = "materias")
-    private List<Aluno> alunos = new ArrayList<>();
 
     public Materia(){
 
