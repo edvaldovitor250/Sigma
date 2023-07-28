@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-// a Classe do projeto Professor
+// A Classe do projeto Professor
 @Entity
 @Data
 @AllArgsConstructor
