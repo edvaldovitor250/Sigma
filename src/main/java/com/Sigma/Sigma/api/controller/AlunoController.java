@@ -9,8 +9,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,7 +43,7 @@ public class AlunoController {
     }
 
     @PostMapping
-    public ResponseEntity<?> adicionar(@RequestBody Aluno aluno) {
+    public ResponseEntity<?> adicionar(@RequestBody @Valid Aluno aluno) {
         try {
             aluno = cadastroAluno.salvar(aluno);
 
@@ -55,7 +57,7 @@ public class AlunoController {
 
     @PutMapping("/{alunoId}")
     public ResponseEntity<?> atualizar(@PathVariable Long alunoId,
-                                       @RequestBody Aluno aluno) {
+                                       @RequestBody @Valid Aluno aluno) {
         try {
             Optional<Aluno> alunoAtual = alunoRepository.findById(alunoId);
 

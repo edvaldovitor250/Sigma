@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,7 +42,7 @@ public class MateriaController {
     }
 
     @PostMapping
-    public ResponseEntity<?> adicionar(@RequestBody Materia materia) {
+    public ResponseEntity<?> adicionar(@RequestBody @Valid Materia materia) {
         try {
             materia = cadastroMateria.salvar(materia);
 
@@ -55,7 +56,7 @@ public class MateriaController {
 
     @PutMapping("/{materiaId}")
     public ResponseEntity<?> atualizar(@PathVariable Long materiaId,
-                                       @RequestBody Materia materia) {
+                                       @RequestBody @Valid Materia materia) {
         try {
             Optional<Materia> materiaAtual = materiaRepository.findById(materiaId);
 
