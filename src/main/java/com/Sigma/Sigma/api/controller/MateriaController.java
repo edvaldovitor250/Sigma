@@ -23,6 +23,11 @@ public class MateriaController {
     private MateriaRepository materiaRepository;
 
     @Autowired
+    public MateriaController(MateriaRepository materiaRepository) {
+        this.materiaRepository = materiaRepository;
+    }
+
+    @Autowired
     private CadastroMateriaService cadastroMateria;
 
     @GetMapping

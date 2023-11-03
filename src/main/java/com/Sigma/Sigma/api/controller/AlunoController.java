@@ -26,6 +26,13 @@ public class AlunoController {
     @Autowired
     private AlunoRepository alunoRepository;
 
+    @Autowired
+    public AlunoController(CadastroAlunoService cadastroAluno, AlunoRepository alunoRepository) {
+        this.cadastroAluno = cadastroAluno;
+        this.alunoRepository = alunoRepository;
+    }
+
+
     @GetMapping
     public List<Aluno> listar() {
         return alunoRepository.findAll();

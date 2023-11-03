@@ -2,11 +2,8 @@ package com.Sigma.Sigma.domain.model.exception;
 
 public class EntidadeEmUsoException extends RuntimeException {
 
-    private static final long serialVersionUID = 1L;
-
-    public EntidadeEmUsoException(String mensagem){
-        super(mensagem);
+    public EntidadeEmUsoException(String id){
+        super("A entidade com ID " + id + " está em uso e não pode ser removida.");
     }
-
 
 }

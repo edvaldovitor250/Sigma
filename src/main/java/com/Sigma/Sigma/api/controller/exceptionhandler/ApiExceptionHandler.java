@@ -47,6 +47,20 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternal(ex, problem, new HttpHeaders(), status, request);
     }
 
+    @ExceptionHandler(EntidadeNaoEncontradaException.class)
+    public ResponseEntity<Object> handleEntidadeNaoEncontrada(
+            EntidadeNaoEncontradaException ex, WebRequest request) {
+        String mensagem = "A entidade não foi encontrada.";
+        return handleExceptionInternal(ex, mensagem, new HttpHeaders(), HttpStatus.NOT_FOUND, request);
+    }
+
+    @ExceptionHandler(EntidadeEmUsoException.class)
+    public ResponseEntity<Object> handleEntidadeEmUso(
+            EntidadeEmUsoException ex, WebRequest request) {
+        String mensagem = "A entidade está em uso e não pode ser removida.";
+        return handleExceptionInternal(ex, mensagem, new HttpHeaders(), HttpStatus.CONFLICT, request);
+    }
+
     protected ResponseEntity<Object> handleNoHandFoundException(NoHandlerFoundException ex,
                                                                 HttpHeaders headers, HttpStatus status, WebRequest request) {
 
@@ -141,36 +155,6 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternal(ex, problem, headers, status, request);
     }
 
-
-    @ExceptionHandler(EntidadeNaoEncontradaException.class)
-    public ResponseEntity<?> handleEntidadeNaoEncontrada(EntidadeNaoEncontradaException ex,
-                                                         WebRequest request) {
-
-        HttpStatus status = HttpStatus.NOT_FOUND;
-        ProblemType problemType = ProblemType.RECURSO_NAO_ENCONTRADO;
-        String detail = ex.getMessage();
-
-        Problem problem = createProblemBuilder(status, problemType, detail)
-                .userMessage(detail)
-                .build();
-
-        return handleExceptionInternal(ex, problem, new HttpHeaders(), status, request);
-    }
-
-    @ExceptionHandler(EntidadeEmUsoException.class)
-    public ResponseEntity<?> handleEntidadeEmUso(EntidadeEmUsoException ex, WebRequest request) {
-
-        HttpStatus status = HttpStatus.CONFLICT;
-        ProblemType problemType = ProblemType.ENTIDADE_EM_USO;
-        String detail = ex.getMessage();
-
-        Problem problem = createProblemBuilder(status, problemType, detail)
-                .userMessage(detail)
-                .build();
-
-        return handleExceptionInternal(ex, problem, new HttpHeaders(), status, request);
-    }
-
     @ExceptionHandler(NegocioException.class)
     public ResponseEntity<?> handleNegocio(NegocioException ex, WebRequest request) {
 
@@ -226,5 +210,16 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
                 .collect(Collectors.joining("."));
     }
 
+    public static class ApiError {
+        private String mensagem;
 
-}
+        public ApiError(String mensagem) {
+            this.mensagem = mensagem;
+        }
+
+        public String getMensagem() {
+            return mensagem;
+        }
+
+
+    }}
